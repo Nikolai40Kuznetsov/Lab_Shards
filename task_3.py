@@ -88,13 +88,13 @@ def sendto_shard(input_data:Logs, memory):
         case 11:
             inputt(engine=engine12, input_data = input_data)
             print("bd12")
-    return (memory) % 12
+    return (memory + 1) % 12
 
 
 def main():
     input_data = Logs(username = "asd", user_action = "DELETE", action_date = "2025-01-01", action_time = "00:00:00", action_result = "OK")
     memory = 0
-    for i in range(1, 12):
+    for i in range(1, 13):
         memory = sendto_shard(input_data, memory=memory)
 
 if __name__ == "__main__":
